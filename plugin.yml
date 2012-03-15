@@ -6,7 +6,7 @@ description: >
              BlocksParty Essentials.
 commands:
   regional:
-    description: The Region Channels!
+    description: The Regional Channels!
   world:
     description: The World Channels!
   trade:
