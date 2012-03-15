@@ -1,0 +1,21 @@
+name: BPChannels
+author: BlocksParty
+main: me.blocksparty.channels.Channels
+version: 1.0
+description: >
+             BlocksParty Essentials.
+commands:
+  regional:
+    description: The Region Channels!
+  world:
+    description: The Region Channels!
+  trade:
+    description: The Region Channels!
+  advice:
+    description: The Region Channels!
+  ooc:
+    description: The Region Channels!
+  gm:
+    description: The Region Channels!
+  rich:
+    description: The Region Channels!
