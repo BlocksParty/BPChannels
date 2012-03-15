@@ -14,7 +14,7 @@ commands:
   advice:
     description: The Advice Channels!
   ooc:
-    description: The OOC Channels!
+    description: The OfF Topic Channels!
   op:
     description: The OP Channels!
   gm:
