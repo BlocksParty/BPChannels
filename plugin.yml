@@ -8,14 +8,14 @@ commands:
   regional:
     description: The Region Channels!
   world:
-    description: The Region Channels!
+    description: The World Channels!
   trade:
-    description: The Region Channels!
+    description: The Trade Channels!
   advice:
-    description: The Region Channels!
+    description: The Advice Channels!
   ooc:
-    description: The Region Channels!
+    description: The OOC Channels!
+  op:
+    description: The OP Channels!
   gm:
-    description: The Region Channels!
-  rich:
-    description: The Region Channels!
+    description: The GM Channels!
