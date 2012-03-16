@@ -21,7 +21,7 @@ public class MyPlayerListener implements Listener {
 	Map<String, String> trade = Channels.trade;
 	Map<String, String> advice = Channels.advice;
 	Map<String, String> ooc = Channels.ooc;
-	Map<String, String> op = Channels.op;
+	Map<String, String> operators = Channels.operators;
 	Map<String, String> gm = Channels.gm;
 	
 	// Auto Sets The Players That Joins The Servers To The /regional Channel!
@@ -63,7 +63,7 @@ public void onPlayerChat(PlayerChatEvent event){
 		}else if(ooc.containsKey(player.getName())){
 			Bukkit.broadcastMessage(ChatColor.YELLOW + "[OOC]" + " " + ChatColor.WHITE + player.getName() + ChatColor.YELLOW + ": " + ChatColor.WHITE + event.getMessage());
 			event.setCancelled(true);
-		}else if(op.containsKey(player.getName())){
+		}else if(operators.containsKey(player.getName())){
 			for(Player p: plugin.getServer().getOnlinePlayers()){
 				if(p.isOp()){
 					p.sendMessage(ChatColor.BLACK + "[OP]" + " " + ChatColor.WHITE + player.getName() + ChatColor.BLACK + ": " + ChatColor.WHITE + event.getMessage());
