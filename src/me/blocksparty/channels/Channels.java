@@ -226,8 +226,7 @@ public class Channels extends JavaPlugin{
 						
 						if(too == null){
 							player.sendMessage("That Player Does Not Exist!");
-						}else{
-							
+						}else{	
 						too.sendMessage("> " + ChatColor.GREEN + sender.getName() + ChatColor.WHITE + ": " + message);
 						player.sendMessage("< " + ChatColor.GREEN + sender.getName() + ChatColor.WHITE + ": " + message);
 						}
