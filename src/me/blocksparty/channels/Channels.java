@@ -28,6 +28,7 @@ public class Channels extends JavaPlugin{
 	public static Map<String, String> ooc = new HashMap<String, String>();
 	public static Map<String, String> operators = new HashMap<String, String>();
 	public static Map<String, String> gm = new HashMap<String, String>();
+	public static Map<String, String> pm = new HashMap<String, String>();
 
 	@Override
 	public void onDisable() {
@@ -177,7 +178,6 @@ public class Channels extends JavaPlugin{
 				}
 			}
 
-
 			if(commandLabel.equalsIgnoreCase("gm")){
 				if(player.isOp()){
 					if(args.length == 0){
@@ -199,7 +199,42 @@ public class Channels extends JavaPlugin{
 					player.sendMessage("You Do Not Have Permission To Use This Channel!");
 				}
 			}
-		}
+			
+			if(commandLabel.equalsIgnoreCase("pm")){
+					if(args.length == 0){
+						player.sendMessage("You Have To Type In The Name Of The Players You Want To Send The Private Message To!");
+					}else if(args.length == 1){
+						player.sendMessage("You Have To Type In The Message You Want To Say To The Players!");
+					}else if(args.length > 1){
+						pm.put(player.getName(), "pm");
+						world.remove(player.getName());
+						trade.remove(player.getName());
+						advice.remove(player.getName());
+						regional.remove(player.getName());
+						ooc.remove(player.getName());
+						gm.remove(player.getName());
+						
+						String fullArgs = "";
+						for(int i = 1; i < args.length; i++)
+						{
+						    fullArgs += (i == args.length - 1) ? args[i] : args[i] + " ";
+						}
+						
+						String check = args[0];
+						Player too = Bukkit.getPlayer(check);
+						String message = fullArgs;
+						
+						if(too == null){
+							player.sendMessage("That Player Does Not Exist!");
+						}else{
+							
+						too.sendMessage("> " + ChatColor.GREEN + sender.getName() + ChatColor.WHITE + ": " + message);
+						player.sendMessage("< " + ChatColor.GREEN + sender.getName() + ChatColor.WHITE + ": " + message);
+						}
+						
+					}
+				}
+			}
 		return false;
 	}
 }

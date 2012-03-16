@@ -19,3 +19,5 @@ commands:
     description: The OP Channels!
   gm:
     description: The GM Channels!
+  pm:
+    description: The GM Channels!

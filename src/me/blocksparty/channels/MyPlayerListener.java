@@ -23,6 +23,7 @@ public class MyPlayerListener implements Listener {
 	Map<String, String> ooc = Channels.ooc;
 	Map<String, String> operators = Channels.operators;
 	Map<String, String> gm = Channels.gm;
+	Map<String, String> pm = Channels.pm;
 	
 	// Auto Sets The Players That Joins The Servers To The /regional Channel!
 @EventHandler
@@ -74,7 +75,9 @@ public void onPlayerChat(PlayerChatEvent event){
 			event.setCancelled(true);
 		}else if(gm.containsKey(player.getName())){
 			Bukkit.broadcastMessage(ChatColor.DARK_RED + "[GAMEMASTER]" + " " + ChatColor.WHITE + player.getName() + ChatColor.DARK_RED + ": " + ChatColor.WHITE + event.getMessage());
-			event.setCancelled(true);												
+			event.setCancelled(true);
+		}else if(pm.containsKey(player.getName())){
+			event.setCancelled(true);			
 			// If The Players Is NOT Assigned To Any Channel..
 		}else{			
 			// Send The Message To The Players
